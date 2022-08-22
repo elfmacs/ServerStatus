@@ -263,6 +263,8 @@ function uptime() {
                 var PING_189 = result.servers[i].ping_189.toFixed(0);
                 var PING_10086 = result.servers[i].ping_10086.toFixed(0);
                 if (PING_10010 >= 20 || PING_189 >= 20 || PING_10086 >= 20)
+                    TableRow.children["ping"].children[0].children[0].className = "progress-bar progress-bar-danger";
+		else if (PING_10010 >= 10 || PING_189 >= 10 || PING_10086 >= 10)
                     TableRow.children["ping"].children[0].children[0].className = "progress-bar progress-bar-warning";
                 else
                     TableRow.children["ping"].children[0].children[0].className = "progress-bar progress-bar-success";
